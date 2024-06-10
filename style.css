@@ -16,7 +16,7 @@
     --color-purple-100: #ad15f4;
     --color-purple-200: #871c9c;
     --color-purple-300: #58077d;
-    --color-purple-400: #431c4f;
+    --color-purple-400: #341c4f;
     --color-purple-500: #1d0934;
     --color-purple-600: #160628;
     --color-cyan-100: #6cf9f2;
@@ -25,8 +25,8 @@
     --color-cyan-400: #1b5f65;
     --color-cyan-500: #1b2428;
     --color-orange-100: #ffe53d;
-    --color-orange-200: #ef6401;
-    --color-orange-300: #ca5502;
+    --color-orange-200: #ca5502;
+    --color-orange-300: #893901;
     --color-orange-400: #d03f2f;
     --color-orange-500: #681b12;
     --color-neutral-100: #ffffff;
@@ -78,4 +78,49 @@ button {
 
 :target {
     scroll-margin-block: 5ex;
+}
+
+#theme-1 {
+    --primary-bg: var(--color-blue-300);
+    --secondary-bg: var(--color-blue-500);
+    --screen-bg: var(--color-blue-600);
+    --key-bg: var(--color-neutral-600);
+    --key-shadow: var(--color-neutral-700);
+    --accent-01-bg: var(--color-orange-400);
+    --accent-01-shadow: var(--color-orange-500);
+    --accent-02-bg: var(--color-blue-100);
+    --accent-02-shadow: var(--color-blue-200);
+    --primary-text-color: var(--color-blue-400);
+    --accent-01-text-color: var(--color-neutral-100);
+    --accent-02-text-color: var(--color-neutral-100);
+}
+
+#theme-2 {
+    --primary-bg: var(--color-neutral-300);
+    --secondary-bg: var(--color-neutral-500);
+    --screen-bg: var(--color-neutral-200);
+    --key-bg: var(--color-neutral-400);
+    --key-shadow: var(--color-neutral-800);
+    --accent-01-bg: var(--color-orange-200);
+    --accent-01-shadow: var(--color-orange-300);
+    --accent-02-bg: var(--color-cyan-300);
+    --accent-02-shadow: var(--color-blue-400);
+    --primary-text-color: var(--color-nuetral-900);
+    --accent-01-text-color: var(--color-neutral-100);
+    --accent-02-text-color: var(var(--color-neutral-100));
+}
+
+#theme-3 {
+    --primary-bg: var(--color-purple-600);
+    --secondary-bg: var(--color-purple-500);
+    --screen-bg: var(--color-purple-500);
+    --key-bg: var(--color-purple-400);
+    --key-shadow: var(--color-purple-200);
+    --accent-01-bg: var(--color-cyan-200);
+    --accent-01-shadow: var(--color-cyan-100);
+    --accent-02-bg: var(--color-purple-300);
+    --accent-02-shadow: var(--color-purple-100);
+    --primary-text-color: var(--color-orange-100);
+    --accent-01-text-color: var(--color-nuetral-100);
+    --accent-02-text-color: var(--color-cyan-500);
 }
