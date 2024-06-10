@@ -1,0 +1,81 @@
+:root {
+    --default-ff: "League Spartan", sans-serif;
+
+    --fs-keypad-2: clamp(1.25rem, 0.78rem + 1.566vw, 1.75rem);
+    --fs-keypad: clamp(2rem, 1.53rem + 1.566vw, 2.5rem);
+    --fs-screen: clamp(2.5rem, 1.561rem + 3.131vw, 3.5rem);
+    --fs-sm: clamp(0.75rem, 0.633rem + 0.391vw, 0.875rem);
+    --fs-logo: 2rem;
+
+    --color-blue-100: #637097;
+    --color-blue-200: #404e72;
+    --color-blue-300: #3a4764;
+    --color-blue-400: #444b5a;
+    --color-blue-500: #232c43;
+    --color-blue-600: #182034;
+    --color-purple-100: #ad15f4;
+    --color-purple-200: #871c9c;
+    --color-purple-300: #58077d;
+    --color-purple-400: #431c4f;
+    --color-purple-500: #1d0934;
+    --color-purple-600: #160628;
+    --color-cyan-100: #6cf9f2;
+    --color-cyan-200: #00e0d1;
+    --color-cyan-300: #377f86;
+    --color-cyan-400: #1b5f65;
+    --color-cyan-500: #1b2428;
+    --color-orange-100: #ffe53d;
+    --color-orange-200: #ef6401;
+    --color-orange-300: #ca5502;
+    --color-orange-400: #d03f2f;
+    --color-orange-500: #681b12;
+    --color-neutral-100: #ffffff;
+    --color-neutral-200: #ededed;
+    --color-neutral-300: #e6e6e6;
+    --color-neutral-400: #e5e4e1;
+    --color-neutral-500: #d1cccc;
+    --color-neutral-600: #eae3dc;
+    --color-neutral-700: #b4a597;
+    --color-neutral-800: #a69d91;
+    --color-neutral-900: #35352c;
+
+    --round-pill: 999rem;
+    --round-pill-md: 0.625rem;
+    --round-pill-sm: 0.25rem;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+body,
+h1,
+p {
+    margin-block-end: 0;
+    margin: 0;
+}
+
+h1 button,
+input,
+label {
+    line-height: 1.1;
+}
+
+input,
+button {
+    font: inherit;
+}
+
+:target {
+    scroll-margin-block: 5ex;
+}
