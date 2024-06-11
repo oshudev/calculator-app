@@ -40,8 +40,7 @@
     --color-neutral-900: #35352c;
 
     --round-pill: 999rem;
-    --round-pill-md: 0.625rem;
-    --round-pill-sm: 0.25rem;
+    --round-md: clamp(0.25rem, -0.102rem + 1.174vw, 0.625rem);
 }
 
 *,
@@ -65,7 +64,8 @@ p {
     margin: 0;
 }
 
-h1 button,
+h1,
+button,
 input,
 label {
     line-height: 1.1;
@@ -91,6 +91,7 @@ button {
     --accent-02-bg: var(--color-blue-100);
     --accent-02-shadow: var(--color-blue-200);
     --primary-text-color: var(--color-blue-400);
+    --secondary-text-color: var(--color-neutral-100);
     --accent-01-text-color: var(--color-neutral-100);
     --accent-02-text-color: var(--color-neutral-100);
 }
@@ -106,8 +107,9 @@ button {
     --accent-02-bg: var(--color-cyan-300);
     --accent-02-shadow: var(--color-blue-400);
     --primary-text-color: var(--color-nuetral-900);
+    --secondray-text-color: var(--primary-text-color);
     --accent-01-text-color: var(--color-neutral-100);
-    --accent-02-text-color: var(var(--color-neutral-100));
+    --accent-02-text-color: var(--color-neutral-100);
 }
 
 #theme-3 {
@@ -121,6 +123,150 @@ button {
     --accent-02-bg: var(--color-purple-300);
     --accent-02-shadow: var(--color-purple-100);
     --primary-text-color: var(--color-orange-100);
-    --accent-01-text-color: var(--color-nuetral-100);
+    --secondray-text-color: var(--primary-text-color);
+    --accent-01-text-color: var(--color-neutral-100);
     --accent-02-text-color: var(--color-cyan-500);
+}
+
+body {
+    padding-inline: 1.5rem;
+    font-family: var(--default-ff);
+    font-weight: 700;
+    color: var(--primary-text-color);
+    background-color: var(--primary-bg);
+}
+
+input,
+button {
+    border: none;
+}
+
+.main {
+    margin-inline: auto;
+    max-width: 33.75rem;
+}
+
+@media only screen and (min-width: 992px) {
+    .main {
+        margin-top: 4.125rem;
+    }
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 1.875rem;
+    color: var(--secondary-text-color);
+}
+
+.theme-switcher {
+    display: flex;
+    font-size: var(--fs-sm);
+}
+
+.theme-switcher p {
+    margin-right: 28px;
+    padding-bottom: 5px;
+    align-self: end;
+    letter-spacing: 0.08em;
+}
+
+.theme-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 3.25rem;
+    margin-inline: auto;
+}
+
+.theme-toggle {
+    padding: 5px;
+    width: 4.5rem;
+    background-color: var(--secondary-bg);
+    border-radius: var(--round-pill);
+    cursor: pointer;
+}
+
+.theme-toggle .circle {
+    --dim: 1rem;
+    display: block;
+    width: var(--dim);
+    height: var(--dim);
+    background-color: var(--accent-01-bg);
+    border-radius: 50%;
+}
+
+.screen {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-block: 0.125rem 1.5rem;
+    padding-inline: clamp(1.375rem, 0.788rem + 1.957vw, 2rem);
+    width: 100%;
+    height: clamp(5.5rem, 3.152rem + 7.828vw, 8rem);
+    background-color: var(--screen-bg);
+    border-radius: var(--round-md);
+}
+
+.screen .placeholder {
+    font-size: var(--fs-screen);
+    text-align: right;
+    letter-spacing: -0.01em;
+    color: var(--secondary-text-color);
+}
+
+.keypad {
+    display: grid;
+    grid-template: repeat(5, 1fr) / repeat(4, 1fr);
+    gap: clamp(0.813rem, 0.167rem + 2.153vw, 1.5rem);
+    padding: clamp(1.5rem, 1.03rem + 1.566vw, 2rem);
+    background-color: var(--secondary-bg);
+    border-radius: var(--round-md);
+}
+
+.keypad > * {
+    margin-bottom: 4px;
+    height: 3.75rem;
+    border-radius: var(--round-md);
+    cursor: pointer;
+}
+
+.keypad input {
+    font-size: var(--fs-keypad);
+    color: var(--primary-text-color);
+    background-color: var(--key-bg);
+    box-shadow: 0 4px 0 var(--key-shadow);
+}
+
+.keypad button {
+    font-size: var(--fs-keypad-2);
+    letter-spacing: -0.02em;
+}
+
+.keypad #reset,
+.keypad #delete {
+    color: var(--accent-01-text-color);
+    background-color: var(--accent-02-bg);
+    box-shadow: 0 4px 0 var(--accent-02-shadow);
+}
+
+.keypad #reset {
+    grid-column: 1/3;
+}
+
+.keypad #result {
+    grid-column: 3/5;
+    color: var(--accent-02-text-color);
+    background-color: var(--accent-01-bg);
+    box-shadow: 0 4px 0 var(--accent-01-shadow);
+}
+
+.footer {
+    padding-block: 1.75rem;
+    color: var(--secondary-text-color);
+}
+
+.footer a {
+    color: var(--secondary-text-color);
 }
