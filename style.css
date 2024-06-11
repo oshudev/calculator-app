@@ -230,6 +230,12 @@ button {
     height: 3.75rem;
     border-radius: var(--round-md);
     cursor: pointer;
+    transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.keypad > *:active {
+    box-shadow: 0 0 0 !important;
+    transform: translateY(4px);
 }
 
 .keypad input {
