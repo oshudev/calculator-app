@@ -190,11 +190,15 @@ button {
 
 .theme-toggle .circle {
     --dim: 1rem;
+    position: relative;
+    left: 0;
+    transform: translateX(0);
     display: block;
     width: var(--dim);
     height: var(--dim);
     background-color: var(--accent-01-bg);
     border-radius: 50%;
+    transition: left 300ms ease, transform 300ms ease;
 }
 
 .screen {
