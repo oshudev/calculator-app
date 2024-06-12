@@ -106,7 +106,7 @@ button {
     --accent-01-shadow: var(--color-orange-300);
     --accent-02-bg: var(--color-cyan-300);
     --accent-02-shadow: var(--color-blue-400);
-    --primary-text-color: var(--color-nuetral-900);
+    --primary-text-color: var(--color-neutral-900);
     --secondray-text-color: var(--primary-text-color);
     --accent-01-text-color: var(--color-neutral-100);
     --accent-02-text-color: var(--color-neutral-100);
