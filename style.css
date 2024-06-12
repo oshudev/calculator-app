@@ -218,6 +218,17 @@ button {
     text-align: right;
     letter-spacing: -0.01em;
     color: var(--secondary-text-color);
+    overflow-x: scroll;
+}
+
+/* Safari and Chrome */
+.screen .placeholder::-webkit-scrollbar {
+    display: none;
+}
+
+/* Firefox */
+.screen .placeholder {
+    scrollbar-width: none;
 }
 
 .keypad {

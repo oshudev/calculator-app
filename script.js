@@ -57,11 +57,17 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             currentInput += num;
         }
-        if (formatNumber(currentInput).length <= 15) {
-            updateScreen(formatNumber(currentInput));
-        } else {
+
+        const [integerPart, decimalPart] = currentInput.split(".");
+        if (
+            integerPart.length > 12 ||
+            (decimalPart && decimalPart.length > 6)
+        ) {
             currentInput = currentInput.slice(0, -1);
+            return;
         }
+
+        updateScreen(formatNumber(currentInput));
     }
 
     function handleOperator(op) {
@@ -86,6 +92,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function handleDelete() {
+        if (currentInput === "undefined" || currentInput === "too large") {
+            currentInput = "";
+            updateScreen("0");
+            return;
+        }
         currentInput = currentInput.slice(0, -1);
         updateScreen(formatNumber(currentInput) || "0");
     }
@@ -101,6 +112,12 @@ document.addEventListener("DOMContentLoaded", () => {
     function handleResult() {
         if (currentInput === "" || previousInput === "") return;
         let result = calculate();
+        if (result.includes(".")) {
+            let [_, decimalPart] = result.split(".");
+            if (decimalPart.length > 2) {
+                result = parseFloat(result).toFixed(2);
+            }
+        }
         if (result.replace(/,/g, "").length > 12) {
             result = "too large";
         } else {
@@ -158,7 +175,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function formatNumber(value) {
-        if (value === "" || value === "undefined") return value;
+        if (value === "" || value === "undefined" || value === "too large")
+            return value;
         if (value.includes(".")) {
             const [integerPart, decimalPart] = value.split(".");
             const roundedDecimalPart =
