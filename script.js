@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (formatNumber(currentInput).length <= 15) {
             updateScreen(formatNumber(currentInput));
         } else {
-            currentInput = currentInput.slice(0, -1); // Ensure input length does not exceed limit
+            currentInput = currentInput.slice(0, -1);
         }
     }
 
@@ -103,6 +103,8 @@ document.addEventListener("DOMContentLoaded", () => {
         let result = calculate();
         if (result.replace(/,/g, "").length > 12) {
             result = "too large";
+        } else {
+            result = formatNumber(result);
         }
         currentInput = result;
         previousInput = "";
